@@ -401,6 +401,96 @@ const weatherPrompts = {
 // ---------------------------------------------------------------------------
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // DATASET: nationalParks from ./datasets/nationalParks
 
 const nationalParksPrompts = {
@@ -414,26 +504,26 @@ const nationalParksPrompts = {
 
     const result = nationalParks.reduce((accumulatorObj, currentNationalPark) => {
       if (currentNationalPark.visited) {
-        
         if (!accumulatorObj.parksVisited) {
           accumulatorObj.parksVisited = [currentNationalPark.name];
         } else {
           accumulatorObj.parksVisited.push(currentNationalPark.name);
         }
-
       } else {
-
         if (!accumulatorObj.parksToVisit) {
           accumulatorObj.parksToVisit = [currentNationalPark.name];
         } else {
           accumulatorObj.parksToVisit.push(currentNationalPark.name);
         }
-
       }
-
+      console.log(accumulatorObj);
       return accumulatorObj;
     }, {});
     return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
 
   getParkInEachState() {
     // Return an array of objects where the key is the state and the value is its National Park
