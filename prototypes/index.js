@@ -266,7 +266,17 @@ const cakePrompts = {
     // Return the total amount of cakes in stock e.g.
     // 59
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let cakeObjectsInStock = this.onlyInStock();
+
+    let totalInventoryArray = [];
+   
+    cakeObjectsInStock.forEach(element => {
+      totalInventoryArray.push(element.inStock);
+    });
+
+    const totalInventoryNum = totalInventoryArray.reduce((a, b) => a + b, 0);
+
+    const result = totalInventoryNum;
     return result;
 
     // Annotation:
