@@ -75,15 +75,22 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    // if kitties.age >= 2
+    //// push onto new array
+
+    const kittiesOverTwo = kitties;
+    
+    kittiesOverTwo.forEach(element => {
+      element.age += 2;
+    });
+
+    kittiesOverTwo.sort((element1, element2) => (element1.age < element2.age) ? 1 : -1);
+
+    const result = kittiesOverTwo;
     return result;
+
   }
 };
-
-
-
-
-
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
