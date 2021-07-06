@@ -27,22 +27,10 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    // const orangeKittyArray = [];
-    // if (kitties[1].color === 'orange') {
-    //   const result = orangeKittyArray.push(kitties[1].name);
-    // } else {
-    //   const result = [];
-    // }
-    // let orangeKitties = [];
-    // let result = kitties.forEach(element => console.log(element.color); 
-
-    // if (element.color === 'orange') {
-    //   return;
-    // });
 
     const orangeKittyNames = [];
 
-    kitties.forEach(function (element) {
+    kitties.forEach(element => {
       if (element.color === 'orange') 
         orangeKittyNames.push(element.name);
     });
