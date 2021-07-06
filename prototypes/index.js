@@ -477,7 +477,19 @@ const bookPrompts = {
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let newBookList = [];
+
+    books.forEach(element => {
+      if (element.published >= 1990) {
+        element.year = element.published;
+        delete element.published;
+        delete element.author;
+        delete element.genre;
+        newBookList.push(element);
+      }
+    });
+
+    const result = newBookList;
     return result;
 
     // Annotation:
