@@ -454,8 +454,15 @@ const bookPrompts = {
     //   'The Curious Incident of the Dog in the Night - Time', 'The Bell Jar',
     //   'Catch-22', 'Treasure Island']
 
+    const nonViolenceBookList = [];
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    books.forEach(element => {
+      if (!(element.genre === 'Horror' || element.genre === 'True Crime')) {
+        nonViolenceBookList.push(element.title);
+      }
+    });
+
+    const result = nonViolenceBookList;
     return result;
 
     // Annotation:
