@@ -247,7 +247,15 @@ const cakePrompts = {
     // ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let onlyInStockArray = [];
+
+    cakes.forEach(element => {
+      if (element.inStock > 0) 
+        onlyInStockArray.push(element);
+    });
+
+    const result = onlyInStockArray;
+
     return result;
 
     // Annotation:
