@@ -164,7 +164,16 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let studentsPerModArray = mods;
+
+    studentsPerModArray.forEach(element => {
+      const studentRatio = element.students / element.instructors;
+      element.studentsPerInstructor = studentRatio;
+      delete element.students;
+      delete element.instructors;
+    });
+
+    const result = studentsPerModArray;
     return result;
 
     // Annotation:
@@ -437,89 +446,6 @@ const weatherPrompts = {
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
