@@ -388,7 +388,27 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let totalFECapacitiesArray = [];
+    let totalBECapacitiesArray = [];
+
+    classrooms.forEach(element => {
+      if (element.program === 'FE') {
+        totalFECapacitiesArray.push(element.capacity);
+      } else {
+        totalBECapacitiesArray.push(element.capacity); 
+      }
+    });
+
+    const totalFECapacitiesNum = totalFECapacitiesArray.reduce((a, b) => a + b, 0);
+
+    const totalBECapacitiesNum = totalBECapacitiesArray.reduce((a, b) => a + b, 0);
+
+    const totalCapacitiesNum = {
+      feCapacity: totalFECapacitiesNum,
+      beCapacity: totalBECapacitiesNum
+    };
+
+    const result = totalCapacitiesNum;
     return result;
 
     // Annotation:
