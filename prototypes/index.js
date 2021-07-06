@@ -45,28 +45,20 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    // const kittiesByAge = [];
+    const kittiesByAge = kitties;
+    
+    kittiesByAge.sort((element1, element2) => (element1.age < element2.age) ? 1 : -1);
 
-    // kitties.forEach(function (element) {
-    //   if (element.age) 
-    //     kittiesByAge.push(element.name);
-    // });
-
-    // kittiesByAge.sort();
-
-    const result = kitties.sort();
-    // kitties.forEach(function (element) {
-    //   if (element.age) 
-    //     kittiesByAge.push(element.name);
-    // });
-
-    // kittiesByAge.sort();
-
-    // const result = kittiesByAge;
+    const result = kittiesByAge;
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    
+    // `1 : -1` means "if comparison = true, then element2 comes first in sorted list"
+
+    // `-1 : 1` means "if comparison = true, then element2 comes last in sorted list"
+
+    // if you switch the `=` in front of the opposite `1`, then it does what `kittiesByAge.reverse();` would do
   },
 
   growUp() {
