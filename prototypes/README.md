@@ -96,20 +96,20 @@ Check out [this video](https://vimeo.com/turing/review/388555223/d701e8fdd8) for
 
 ## Single Datasets
 
-[x] kitties
-[ ] clubs 
-[x] mods
-[ ] cakes
-[x] classrooms
-[x] books
-[ ] weather
-[ ] nationalParks
-[ ] breweries
+- [x] kitties
+- [ ] clubs 
+- [x] mods
+- [ ] cakes
+- [x] classrooms
+- [x] books
+- [ ] weather
+- [ ] nationalParks
+- [ ] breweries
 
 ## Double Datasets
 
-[ ] turing
-[ ] bosses
-[ ] astronomy
-[ ] ultima
-[ ] dinosaurs
+- [ ] turing
+- [ ] bosses
+- [ ] astronomy
+- [ ] ultima
+- [ ] dinosaurs
