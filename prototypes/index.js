@@ -27,7 +27,27 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    // const orangeKittyArray = [];
+    // if (kitties[1].color === 'orange') {
+    //   const result = orangeKittyArray.push(kitties[1].name);
+    // } else {
+    //   const result = [];
+    // }
+    // let orangeKitties = [];
+    // let result = kitties.forEach(element => console.log(element.color); 
+
+    // if (element.color === 'orange') {
+    //   return;
+    // });
+
+    const orangeKittyNames = [];
+
+    kitties.forEach(function (element) {
+      if (element.color === 'orange') 
+        orangeKittyNames.push(element.name);
+    });
+
+    const result = orangeKittyNames;
     return result;
 
     // Annotation:
@@ -516,7 +536,6 @@ const nationalParksPrompts = {
           accumulatorObj.parksToVisit.push(currentNationalPark.name);
         }
       }
-      console.log(accumulatorObj);
       return accumulatorObj;
     }, {});
     return result;
@@ -535,8 +554,9 @@ const nationalParksPrompts = {
     // { Florida: 'Everglades' } ]
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    // const result = 'test';
+    // const toJoin = Object.values(nationalParks[0].location);
+    // return result;
 
     // Annotation:
     // Write your annotation here as a comment
