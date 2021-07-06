@@ -288,11 +288,36 @@ const cakePrompts = {
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    // BAD DRAFTS BELOW, SKIPPING FOR NOW:
+
+    // let allToppingsArray = [];
+
+    // cakes.forEach(element => {
+    //   allToppingsArray.push(element.toppings);
+    // });
+
+    // let allToppingsArrayJoined = allToppingsArray.join();
+
+    // console.log(allToppingsArrayJoined);
+
+    // const result = allToppingsArrayJoined;
+    // return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+
+    // WRONG DRAFTING CODE:
+
+    // let uniqueToppings = [];
+
+    // allToppingsArray.forEach(element => {
+    //   if (!allToppingsArray.includes(element)) {
+    //     uniqueToppings.push(element);
+    //   }
+    // });
+
+    // let uniqueToppings = allToppingsArray.element.filter((c, index) => {
+    //   return allToppingsArray.element.indexOf(c) === index;
+    // });
   },
 
   groceryList() {
