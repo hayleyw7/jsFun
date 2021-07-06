@@ -208,7 +208,18 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let stockPerCakeArray = cakes;
+
+    stockPerCakeArray.forEach(element => {
+      element.flavor = element.cakeFlavor;
+      delete element.filling;
+      delete element.frosting;
+      delete element.toppings;
+      delete element.cakeFlavor;
+    });
+
+    const result = stockPerCakeArray;
+
     return result;
 
     // Annotation:
