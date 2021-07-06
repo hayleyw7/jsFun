@@ -366,7 +366,14 @@ const classPrompts = {
     //   { roomLetter: 'G', program: 'FE', capacity: 29 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const feClassroomsArray = [];
+
+    classrooms.forEach(element => {
+      if (element.program === 'FE') 
+        feClassroomsArray.push(element);
+    });
+    
+    const result = feClassroomsArray;
     return result;
 
     // Annotation:
