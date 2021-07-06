@@ -75,9 +75,6 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    // if kitties.age >= 2
-    //// push onto new array
-
     const kittiesOverTwo = kitties;
     
     kittiesOverTwo.forEach(element => {
@@ -92,6 +89,15 @@ const kittyPrompts = {
   }
 };
 
+// Annotation:
+
+// if kitties.age >= 2
+//// push onto new array
+
+
+
+
+
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -101,9 +107,10 @@ const kittyPrompts = {
 
 
 
-
+// SKIPPING & COMING BACK TO THIS ONE
 
 // DATASET: clubs from ./datasets/clubs
+
 const clubPrompts = {
   membersBelongingToClubs() {
     // Create an object whose keys are the names of people, and whose values are
@@ -114,7 +121,14 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const clubsPeopleIn = clubs;
+
+    // PSUEDOCODE THAT I STARTED MESSING AROUND WITH:
+    // key is `clubs.members`
+    //// if clubs.members .includes ?
+    // value is array of clubs.club
+
+    const result = clubsPeopleIn;
     return result;
 
     // Annotation:
