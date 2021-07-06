@@ -57,7 +57,24 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    // const kittiesByAge = [];
+
+    // kitties.forEach(function (element) {
+    //   if (element.age) 
+    //     kittiesByAge.push(element.name);
+    // });
+
+    // kittiesByAge.sort();
+
+    const result = kitties.sort();
+    // kitties.forEach(function (element) {
+    //   if (element.age) 
+    //     kittiesByAge.push(element.name);
+    // });
+
+    // kittiesByAge.sort();
+
+    // const result = kittiesByAge;
     return result;
 
     // Annotation:
