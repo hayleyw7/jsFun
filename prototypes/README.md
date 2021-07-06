@@ -91,3 +91,25 @@ Check out [this video](https://vimeo.com/turing/review/388555223/d701e8fdd8) for
 * [MDN - Array Prototype Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype#Methods)
 * [MDN - Object Prototype Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods_of_the_Object_constructor)
 * [Turing Prototype Methods Lesson Plan](http://frontend.turing.io/lessons/module-2/arrays-objects/index.html)
+
+# Completed
+
+## Single Datasets
+
+[x] kitties
+[ ] clubs 
+[ ] mods
+[ ] cakes
+[ ] classrooms
+[ ] books
+[ ] weather
+[ ] nationalParks
+[ ] breweries
+
+## Double Datasets
+
+[ ] turing
+[ ] bosses
+[ ] astronomy
+[ ] ultima
+[ ] dinosaurs
