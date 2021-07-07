@@ -28,14 +28,13 @@ const kittyPrompts = {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
 
-    const orangeKittyNames = [];
+    const result = [];
 
     kitties.forEach(kitty => {
       if (kitty.color === 'orange') 
-        orangeKittyNames.push(kitty.name);
+        result.push(kitty.name);
     });
 
-    const result = orangeKittyNames;
     return result;
 
     // Annotation:
@@ -45,9 +44,8 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const kittiesByAge = kitties.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
+    const result = kitties.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
 
-    const result = kittiesByAge;
     return result;
 
     // Annotation:
@@ -252,14 +250,14 @@ const cakePrompts = {
     // ..etc
     // ]
 
-    let onlyInStockArray = [];
+    let result = [];
 
     cakes.forEach(cake => {
       if (cake.inStock > 0) 
-        onlyInStockArray.push(cake);
+        result.push(cake);
     });
 
-    const result = onlyInStockArray;
+    const result = result;
 
     return result;
 
@@ -279,9 +277,8 @@ const cakePrompts = {
       totalInventoryArray.push(cake.inStock);
     });
 
-    const totalInventoryNum = totalInventoryArray.reduce((a, b) => a + b, 0);
+    const result = totalInventoryArray.reduce((a, b) => a + b, 0);
 
-    const result = totalInventoryNum;
     return result;
 
     // Annotation:
@@ -371,14 +368,13 @@ const classPrompts = {
     //   { roomLetter: 'G', program: 'FE', capacity: 29 }
     // ]
 
-    const feClassroomsArray = [];
+    const result = [];
 
     classrooms.forEach(classroom => {
       if (classroom.program === 'FE') 
-        feClassroomsArray.push(classroom);
+        result.push(classroom);
     });
     
-    const result = feClassroomsArray;
     return result;
 
     // Annotation:
@@ -408,12 +404,11 @@ const classPrompts = {
 
     const totalBECapacitiesNum = totalBECapacitiesArray.reduce((classroomA, classroomB) => classroomA + classroomB, 0);
 
-    const totalCapacitiesNum = {
+    const result = {
       feCapacity: totalFECapacitiesNum,
       beCapacity: totalBECapacitiesNum
     };
 
-    const result = totalCapacitiesNum;
     return result;
 
     // Annotation:
@@ -423,15 +418,14 @@ const classPrompts = {
   sortByCapacity() {
     // Return the array of classrooms sorted by their capacity (least capacity to greatest)
 
-    const sortByCapacityArray = classrooms.sort((classroomA, classroomB) => (classroomA.capacity > classroomB.capacity) ? 1 : -1);
+    const result = classrooms.sort((classroomA, classroomB) => (classroomA.capacity > classroomB.capacity) ? 1 : -1);
 
-    sortByCapacityArray.sort((classroomA, classroomB) => {
+    result.sort((classroomA, classroomB) => {
       if (classroomA.capacity === classroomB.capacity && classroomA.roomLetter < classroomB.roomLetter) {
         return -1;
       }
     });
 
-    const result = sortByCapacityArray;
     return result;
 
     // Annotation:
@@ -457,15 +451,14 @@ const bookPrompts = {
     //   'The Curious Incident of the Dog in the Night - Time', 'The Bell Jar',
     //   'Catch-22', 'Treasure Island']
 
-    const nonViolenceBookList = [];
+    const result = [];
 
     books.forEach(book => {
       if (!(book.genre === 'Horror' || book.genre === 'True Crime')) {
-        nonViolenceBookList.push(book.title);
+        result.push(book.title);
       }
     });
 
-    const result = nonViolenceBookList;
     return result;
 
     // Annotation:
@@ -480,7 +473,7 @@ const bookPrompts = {
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    let newBookList = [];
+    let result = [];
 
     books.forEach(book => {
       if (book.published >= 1990) {
@@ -488,11 +481,11 @@ const bookPrompts = {
         delete book.published;
         delete book.author;
         delete book.genre;
-        newBookList.push(book);
+        result.push(book);
       }
     });
 
-    const result = newBookList;
+    const result = result;
     return result;
 
     // Annotation:
