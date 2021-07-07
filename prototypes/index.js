@@ -30,9 +30,9 @@ const kittyPrompts = {
 
     const orangeKittyNames = [];
 
-    kitties.forEach(element => {
-      if (element.color === 'orange') 
-        orangeKittyNames.push(element.name);
+    kitties.forEach(kitty => {
+      if (kitty.color === 'orange') 
+        orangeKittyNames.push(kitty.name);
     });
 
     const result = orangeKittyNames;
@@ -45,9 +45,7 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const kittiesByAge = kitties;
-    
-    kittiesByAge.sort((element1, element2) => (element1.age < element2.age) ? 1 : -1);
+    const kittiesByAge = kitties.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
 
     const result = kittiesByAge;
     return result;
@@ -75,13 +73,11 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const kittiesOverTwo = kitties;
-    
-    kittiesOverTwo.forEach(element => {
-      element.age += 2;
+    const kittiesOverTwo = kitties.forEach(kitty => {
+      kitty.age += 2;
     });
 
-    kittiesOverTwo.sort((element1, element2) => (element1.age < element2.age) ? 1 : -1);
+    kittiesOverTwo.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
 
     const result = kittiesOverTwo;
     return result;
@@ -164,13 +160,11 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    let studentsPerModArray = mods;
-
-    studentsPerModArray.forEach(element => {
-      const studentRatio = element.students / element.instructors;
-      element.studentsPerInstructor = studentRatio;
-      delete element.students;
-      delete element.instructors;
+    let studentsPerModArray = mods.forEach(student => {
+      const studentRatio = student.students / student.instructors;
+      student.studentsPerInstructor = studentRatio;
+      delete student.students;
+      delete student.instructors;
     });
 
     const result = studentsPerModArray;
@@ -208,14 +202,12 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    let stockPerCakeArray = cakes;
-
-    stockPerCakeArray.forEach(element => {
-      element.flavor = element.cakeFlavor;
-      delete element.filling;
-      delete element.frosting;
-      delete element.toppings;
-      delete element.cakeFlavor;
+    let stockPerCakeArray = cakes.forEach(cake => {
+      cake.flavor = cake.cakeFlavor;
+      delete cake.filling;
+      delete cake.frosting;
+      delete cake.toppings;
+      delete cake.cakeFlavor;
     });
 
     const result = stockPerCakeArray;
@@ -249,9 +241,9 @@ const cakePrompts = {
 
     let onlyInStockArray = [];
 
-    cakes.forEach(element => {
-      if (element.inStock > 0) 
-        onlyInStockArray.push(element);
+    cakes.forEach(cake => {
+      if (cake.inStock > 0) 
+        onlyInStockArray.push(cake);
     });
 
     const result = onlyInStockArray;
@@ -270,8 +262,8 @@ const cakePrompts = {
 
     let totalInventoryArray = [];
    
-    cakeObjectsInStock.forEach(element => {
-      totalInventoryArray.push(element.inStock);
+    cakeObjectsInStock.forEach(cake => {
+      totalInventoryArray.push(cake.inStock);
     });
 
     const totalInventoryNum = totalInventoryArray.reduce((a, b) => a + b, 0);
@@ -368,9 +360,9 @@ const classPrompts = {
 
     const feClassroomsArray = [];
 
-    classrooms.forEach(element => {
-      if (element.program === 'FE') 
-        feClassroomsArray.push(element);
+    classrooms.forEach(classroom => {
+      if (classroom.program === 'FE') 
+        feClassroomsArray.push(classroom);
     });
     
     const result = feClassroomsArray;
@@ -391,17 +383,17 @@ const classPrompts = {
     let totalFECapacitiesArray = [];
     let totalBECapacitiesArray = [];
 
-    classrooms.forEach(element => {
-      if (element.program === 'FE') {
-        totalFECapacitiesArray.push(element.capacity);
+    classrooms.forEach(classroom => {
+      if (classroom.program === 'FE') {
+        totalFECapacitiesArray.push(classroom.capacity);
       } else {
-        totalBECapacitiesArray.push(element.capacity); 
+        totalBECapacitiesArray.push(classroom.capacity); 
       }
     });
 
-    const totalFECapacitiesNum = totalFECapacitiesArray.reduce((a, b) => a + b, 0);
+    const totalFECapacitiesNum = totalFECapacitiesArray.reduce((classroomA, classroomB) => classroomA + classroomB, 0);
 
-    const totalBECapacitiesNum = totalBECapacitiesArray.reduce((a, b) => a + b, 0);
+    const totalBECapacitiesNum = totalBECapacitiesArray.reduce((classroomA, classroomB) => classroomA + classroomB, 0);
 
     const totalCapacitiesNum = {
       feCapacity: totalFECapacitiesNum,
@@ -418,12 +410,10 @@ const classPrompts = {
   sortByCapacity() {
     // Return the array of classrooms sorted by their capacity (least capacity to greatest)
 
-    const sortByCapacityArray = classrooms;
+    const sortByCapacityArray = classrooms.sort((classroomA, classroomB) => (classroomA.capacity > classroomB.capacity) ? 1 : -1);
 
-    sortByCapacityArray.sort((a, b) => (a.capacity > b.capacity) ? 1 : -1);
-
-    sortByCapacityArray.sort((a, b) => {
-      if (a.capacity === b.capacity && a.roomLetter < b.roomLetter) {
+    sortByCapacityArray.sort((classroomA, classroomB) => {
+      if (classroomA.capacity === classroomB.capacity && classroomA.roomLetter < classroomB.roomLetter) {
         return -1;
       }
     });
@@ -456,9 +446,9 @@ const bookPrompts = {
 
     const nonViolenceBookList = [];
 
-    books.forEach(element => {
-      if (!(element.genre === 'Horror' || element.genre === 'True Crime')) {
-        nonViolenceBookList.push(element.title);
+    books.forEach(book => {
+      if (!(book.genre === 'Horror' || book.genre === 'True Crime')) {
+        nonViolenceBookList.push(book.title);
       }
     });
 
@@ -479,13 +469,13 @@ const bookPrompts = {
 
     let newBookList = [];
 
-    books.forEach(element => {
-      if (element.published >= 1990) {
-        element.year = element.published;
-        delete element.published;
-        delete element.author;
-        delete element.genre;
-        newBookList.push(element);
+    books.forEach(book => {
+      if (book.published >= 1990) {
+        book.year = book.published;
+        delete book.published;
+        delete book.author;
+        delete book.genre;
+        newBookList.push(book);
       }
     });
 
