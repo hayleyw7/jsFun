@@ -73,13 +73,25 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const kittiesOverTwo = kitties.forEach(kitty => {
+    // let kittiesOverTwo = kitties.forEach(kitty => {
+    //   kitty.age += 2;
+    // });
+
+    // console.log(kittiesOverTwo);
+
+    // kittiesOverTwo.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
+
+    // const result = kittiesOverTwo;
+    // return result;
+
+    const result = kitties;
+    
+    result.forEach(kitty => {
       kitty.age += 2;
     });
 
-    kittiesOverTwo.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
+    result.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
 
-    const result = kittiesOverTwo;
     return result;
 
   }
@@ -160,14 +172,15 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    let studentsPerModArray = mods.forEach(student => {
+    const result = studentsPerModArray = mods;
+    
+    result.forEach(student => {
       const studentRatio = student.students / student.instructors;
       student.studentsPerInstructor = studentRatio;
       delete student.students;
       delete student.instructors;
     });
 
-    const result = studentsPerModArray;
     return result;
 
     // Annotation:
@@ -202,15 +215,15 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    let stockPerCakeArray = cakes.forEach(cake => {
+    let result = cakes;
+    
+    result.forEach(cake => {
       cake.flavor = cake.cakeFlavor;
       delete cake.filling;
       delete cake.frosting;
       delete cake.toppings;
       delete cake.cakeFlavor;
     });
-
-    const result = stockPerCakeArray;
 
     return result;
 
