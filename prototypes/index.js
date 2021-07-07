@@ -127,14 +127,19 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const clubsPeopleIn = clubs;
+    const result = clubs;
 
-    // PSUEDOCODE THAT I STARTED MESSING AROUND WITH:
-    // key is `clubs.members`
-    //// if clubs.members .includes ?
-    // value is array of clubs.club
+    let allNames = [];
 
-    const result = clubsPeopleIn;
+    result.forEach(club => {
+      allNames.push(club.members);
+      allNames.concat();
+    });
+
+    // allNames.toString();
+
+    console.log(allNames);
+
     return result;
 
     // Annotation:
@@ -170,7 +175,7 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = studentsPerModArray = mods;
+    const result = mods;
     
     result.forEach(student => {
       const studentRatio = student.students / student.instructors;
@@ -257,8 +262,6 @@ const cakePrompts = {
         result.push(cake);
     });
 
-    const result = result;
-
     return result;
 
     // Annotation:
@@ -289,6 +292,17 @@ const cakePrompts = {
     // Return an array of all unique toppings (no duplicates) needed to bake
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
+
+    let result = [];
+
+    cakes.forEach(cake => {
+      result.push(cake.toppings);
+    });
+
+    return result;
+
+    // console.log(Object.values(cakes[0].toppings));
+
 
     // BAD DRAFTS BELOW, SKIPPING FOR NOW:
 
@@ -485,7 +499,6 @@ const bookPrompts = {
       }
     });
 
-    const result = result;
     return result;
 
     // Annotation:
@@ -501,6 +514,14 @@ const bookPrompts = {
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
 // DATASET: weather from './datasets/weather
 
 const weatherPrompts = {
@@ -508,7 +529,15 @@ const weatherPrompts = {
     // return an array of all the average temperatures. Eg:
     // [ 40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5 ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+
+
+    const result = [];
+
+    weather.forEach(city => {
+      let avgTemp = ((city.temperature.high + city.temperature.low) / 2);
+      result.push(avgTemp);
+    });
+
     return result;
 
     // Annotation:
@@ -546,6 +575,15 @@ const weatherPrompts = {
 
   }
 };
+
+
+
+
+
+
+
+
+
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
