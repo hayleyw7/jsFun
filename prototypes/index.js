@@ -280,7 +280,7 @@ const cakePrompts = {
       totalInventoryArray.push(cake.inStock);
     });
 
-    const result = totalInventoryArray.reduce((a, b) => a + b, 0);
+    const result = totalInventoryArray.reduce((cakeA, cakeB) => cakeA + cakeB, 0);
 
     return result;
 
@@ -572,7 +572,18 @@ const weatherPrompts = {
     //   temperature: { high: 49, low: 38 }
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    // const result = [];
+
+    // weather.forEach(cityA, cityB => {
+    //   if (cityA > cityB) {
+    //     result.push(cityA);
+    //   }
+    // });
+
+    const citiesByHumidity = weather.sort((cityA, cityB) => (cityA.humidity > cityB.humidity) ? -1 : 1);
+
+    const result = citiesByHumidity[0];
+
     return result;
 
     // Annotation:
