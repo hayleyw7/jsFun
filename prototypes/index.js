@@ -529,8 +529,6 @@ const weatherPrompts = {
     // return an array of all the average temperatures. Eg:
     // [ 40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5 ]
 
-
-
     const result = [];
 
     weather.forEach(city => {
@@ -551,7 +549,14 @@ const weatherPrompts = {
     // 'New Orleans, Louisiana is sunny.',
     // 'Raleigh, North Carolina is mostly sunny.' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [];
+
+    weather.forEach (city => {
+      if (city.type === 'sunny' || city.type === 'mostly sunny') {
+        result.push(`${city.location} is ${city.type}.`);
+      }
+    });
+
     return result;
 
     // Annotation:
