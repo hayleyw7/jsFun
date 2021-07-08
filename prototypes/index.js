@@ -22,6 +22,7 @@ const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 // =================================================================
 
 // DATASET: kitties from ./datasets/kitties
+
 const kittyPrompts = {
 
 
@@ -204,6 +205,7 @@ const clubPrompts = {
 
 
 // DATASET: mods from ./datasets/mods
+
 const modPrompts = {
 
 
@@ -255,6 +257,7 @@ const modPrompts = {
 
 
 // DATASET: cakes from ./datasets/cakes
+
 const cakePrompts = {
 
 
@@ -423,6 +426,7 @@ const cakePrompts = {
 
 
 // DATASET: classrooms from ./datasets/classrooms
+
 const classPrompts = {
 
 
@@ -876,6 +880,7 @@ const nationalParksPrompts = {
 
 
 // DATASET: breweries from ./datasets/breweries
+
 const breweryPrompts = {
 
 
@@ -968,73 +973,110 @@ const breweryPrompts = {
 // =================================================================
 
 // DATASET: instructors, cohorts from ./datasets/turing
+
 const turingPrompts = {
+
+
+
+
+
+
+
+
+
+  // Return an array of instructors where each instructor is an object
+  // with a name and the count of students in their module. e.g.
+  // [
+  //  { name: 'Pam', studentCount: 21 },
+  //  { name: 'Robbie', studentCount: 18 }
+  // ]
+
   studentsForEachInstructor() {
-    // Return an array of instructors where each instructor is an object
-    // with a name and the count of students in their module. e.g.
-    // [
-    //  { name: 'Pam', studentCount: 21 },
-    //  { name: 'Robbie', studentCount: 18 }
-    // ]
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
+
+
+
+
+
+
+
+
+
+  // Return an object of how many students per teacher there are in each cohort e.g.
+  // {
+  // cohort1806: 9,
+  // cohort1804: 10.5
+  // }
 
   studentsPerInstructor() {
-    // Return an object of how many students per teacher there are in each cohort e.g.
-    // {
-    // cohort1806: 9,
-    // cohort1804: 10.5
-    // }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+
+
+  // Return an object where each key is an instructor name and each value is
+  // an array of the modules they can teach based on their skills. e.g.:
+  // {
+  //     Pam: [2, 4],
+  //     Brittany: [2, 4],
+  //     Nathaniel: [2, 4],
+  //     Robbie: [4],
+  //     Leta: [2, 4],
+  //     Travis: [1, 2, 3, 4],
+  //     Louisa: [1, 2, 3, 4],
+  //     Christie: [1, 2, 3, 4],
+  //     Will: [1, 2, 3, 4]
+  //   }
+    
   modulesPerTeacher() {
-    // Return an object where each key is an instructor name and each value is
-    // an array of the modules they can teach based on their skills. e.g.:
-    // {
-    //     Pam: [2, 4],
-    //     Brittany: [2, 4],
-    //     Nathaniel: [2, 4],
-    //     Robbie: [4],
-    //     Leta: [2, 4],
-    //     Travis: [1, 2, 3, 4],
-    //     Louisa: [1, 2, 3, 4],
-    //     Christie: [1, 2, 3, 4],
-    //     Will: [1, 2, 3, 4]
-    //   }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Return an object where each key is a curriculum topic and each value is
+  // an array of instructors who teach that topic e.g.:
+  // {
+  //   html: [ 'Travis', 'Louisa' ],
+  //   css: [ 'Travis', 'Louisa' ],
+  //   javascript: [ 'Travis', 'Louisa', 'Christie', 'Will' ],
+  //   recursion: [ 'Pam', 'Leta' ]
+  // }
 
   curriculumPerTeacher() {
-    // Return an object where each key is a curriculum topic and each value is
-    // an array of instructors who teach that topic e.g.:
-    // {
-    //   html: [ 'Travis', 'Louisa' ],
-    //   css: [ 'Travis', 'Louisa' ],
-    //   javascript: [ 'Travis', 'Louisa', 'Christie', 'Will' ],
-    //   recursion: [ 'Pam', 'Leta' ]
-    // }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
@@ -1055,8 +1097,22 @@ const turingPrompts = {
 
 
 // DATASET: bosses, sidekicks from ./datasets/bosses
+
 const bossPrompts = {
-  bossLoyalty() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Create an array of objects that each have the name of the boss and the sum
     // loyalty of all their sidekicks. e.g.:
     // [
@@ -1065,11 +1121,11 @@ const bossPrompts = {
     //   { bossName: 'Scar', sidekickLoyalty: 16 }
     // ]
 
+  bossLoyalty() {
+
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
@@ -1090,49 +1146,79 @@ const bossPrompts = {
 
 
 // DATASET: constellations, stars } from ./datasets/astronomy
+
 const astronomyPrompts = {
+
+
+
+
+
+
+
+
+
+  // Return an array of all the stars that appear in any of the constellations
+  // listed in the constellations object e.g.
+  // [
+  //   { name: 'Rigel',
+  //     visualMagnitude: 0.13,
+  //     constellation: 'Orion',
+  //     lightYearsFromEarth: 860,
+  //     color: 'blue' },
+  //   { name: 'Betelgeuse',
+  //     visualMagnitude: 0.5,
+  //     constellation: 'Orion',
+  //     lightYearsFromEarth: 640,
+  //     color: 'red' }
+  // ]
+
   starsInConstellations() {
-    // Return an array of all the stars that appear in any of the constellations
-    // listed in the constellations object e.g.
-    // [
-    //   { name: 'Rigel',
-    //     visualMagnitude: 0.13,
-    //     constellation: 'Orion',
-    //     lightYearsFromEarth: 860,
-    //     color: 'blue' },
-    //   { name: 'Betelgeuse',
-    //     visualMagnitude: 0.5,
-    //     constellation: 'Orion',
-    //     lightYearsFromEarth: 640,
-    //     color: 'red' }
-    // ]
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Return an object with keys of the different colors of the stars,
+  // whose values are arrays containing the star objects that match e.g.
+  // {
+  //   blue: [{obj}, {obj}, {obj}, {obj}, {obj}],
+  //   white: [{obj}, {obj}],
+  //   yellow: [{obj}, {obj}],
+  //   orange: [{obj}],
+  //   red: [{obj}]
+  // }
 
   starsByColor() {
-    // Return an object with keys of the different colors of the stars,
-    // whose values are arrays containing the star objects that match e.g.
-    // {
-    //   blue: [{obj}, {obj}, {obj}, {obj}, {obj}],
-    //   white: [{obj}, {obj}],
-    //   yellow: [{obj}, {obj}],
-    //   orange: [{obj}],
-    //   red: [{obj}]
-    // }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
-  constellationsStarsExistIn() {
+
+
+
+
+
+
+
+
+
     // Return an array of the names of the constellations that the brightest stars are part of e.g.
 
     //  [ "Canis Major",
@@ -1146,12 +1232,11 @@ const astronomyPrompts = {
     //    "Orion",
     //    "The Little Dipper" ]
 
+  constellationsStarsExistIn() {
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
@@ -1172,29 +1257,51 @@ const astronomyPrompts = {
 
 
 // DATASET: charaters, weapons from ./datasets/ultima
-const ultimaPrompts = {
-  totalDamage() {
 
-    // Return the sum of the amount of damage for all the weapons that our characters can use
-    // Answer => 113
+const ultimaPrompts = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Return the sum of the amount of damage for all the weapons that our characters can use
+  // Answer => 113
+
+  totalDamage() {
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
+
+
+
+
+
+
+
+
+
+
+
+
+  // Return the sum damage and total range for each character as an object.
+  // ex: [ { Avatar: { damage: 27, range: 24 }, { Iolo: {...}, ...}
 
   charactersByTotal() {
 
-    // Return the sum damage and total range for each character as an object.
-    // ex: [ { Avatar: { damage: 27, range: 24 }, { Iolo: {...}, ...}
-
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 };
 
@@ -1215,26 +1322,47 @@ const ultimaPrompts = {
 
 
 // DATASET: dinosaurs, humans, movies from ./datasets/dinosaurs
+
 const dinosaurPrompts = {
+
+
+
+
+
+
+
+
+  // Return an object where each key is a movie title and each value is the
+  // number of awesome dinosaurs in that movie. e.g.:
+  // {
+  //   'Jurassic Park': 5,
+  //   'The Lost World: Jurassic Park': 8,
+  //   'Jurassic Park III': 9,
+  //   'Jurassic World': 11,
+  //   'Jurassic World: Fallen Kingdom': 18
+  // }
+
   countAwesomeDinosaurs() {
-    // Return an object where each key is a movie title and each value is the
-    // number of awesome dinosaurs in that movie. e.g.:
-    // {
-    //   'Jurassic Park': 5,
-    //   'The Lost World: Jurassic Park': 8,
-    //   'Jurassic Park III': 9,
-    //   'Jurassic World': 11,
-    //   'Jurassic World: Fallen Kingdom': 18
-    // }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
-  averageAgePerMovie() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* Return an object where each key is a movie director's name and each value is
         an object whose key is a movie's title and whose value is the average age
         of the cast on the release year of that movie.
@@ -1260,47 +1388,73 @@ const dinosaurPrompts = {
       }
     */
 
+  averageAgePerMovie() {
+
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+  Return an array of objects that contain the names of humans who have not been cast in a Jurassic Park movie (yet), their nationality, and their imdbStarMeterRating. The object in the array should be sorted alphabetically by nationality.
+
+  e.g.
+    [{
+      name: 'Justin Duncan',
+      nationality: 'Alien',
+      imdbStarMeterRating: 0
+    },
+    {
+      name: 'Karin Ohman',
+      nationality: 'Chinese',
+      imdbStarMeterRating: 0
+    },
+    {
+      name: 'Tom Wilhoit',
+      nationality: 'Kiwi',
+      imdbStarMeterRating: 1
+    }, {
+      name: 'Jeo D',
+      nationality: 'Martian',
+      imdbStarMeterRating: 0
+    }]
+  */
 
   uncastActors() {
-    /*
-    Return an array of objects that contain the names of humans who have not been cast in a Jurassic Park movie (yet), their nationality, and their imdbStarMeterRating. The object in the array should be sorted alphabetically by nationality.
-
-    e.g.
-      [{
-        name: 'Justin Duncan',
-        nationality: 'Alien',
-        imdbStarMeterRating: 0
-      },
-      {
-        name: 'Karin Ohman',
-        nationality: 'Chinese',
-        imdbStarMeterRating: 0
-      },
-      {
-        name: 'Tom Wilhoit',
-        nationality: 'Kiwi',
-        imdbStarMeterRating: 1
-      }, {
-        name: 'Jeo D',
-        nationality: 'Martian',
-        imdbStarMeterRating: 0
-      }]
-    */
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
-  actorsAgesInMovies() {
+
+
+
+
+
+
+
+
+
+
+
+
     /*
     Return an array of objects for each human and the age(s) they were in the movie(s) they were cast in, as an array of age(s). Only include humans who were cast in at least one movie.
 
@@ -1316,13 +1470,21 @@ const dinosaurPrompts = {
       { name: 'Bryce Dallas Howard', ages: [ 34, 37 ] } ]
     */
 
+  actorsAgesInMovies() {
+
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
+
+
+
+
+
+
+
+
 
 module.exports = {
   breweryPrompts,
