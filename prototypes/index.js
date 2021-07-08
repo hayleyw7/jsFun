@@ -318,18 +318,12 @@ const cakePrompts = {
 
   onlyInStock() {
 
-    let result = [];
-
-    cakes.forEach(cake => {
-      if (cake.inStock > 0) 
-        result.push(cake);
+    const result = cakes.filter(cake => {
+      return cake.inStock > 0;
     });
 
     return result;
-
   },
-
-
 
 
 
@@ -341,27 +335,32 @@ const cakePrompts = {
   // Return the total amount of cakes in stock e.g.
   // 59
 
+
+
+
+
+
+
+
+
+
   totalInventory() {
 
-    let cakeObjectsInStock = this.onlyInStock();
+    const listCakesInStock = cake => {
+      return cake.inStock > 0;
+    };
 
-    let totalInventoryArray = [];
-   
-    cakeObjectsInStock.forEach(cake => {
-      totalInventoryArray.push(cake.inStock);
-    });
+    const listNumCakesInStock = cake => {
+      return cake.inStock;
+    };
 
-    const result = totalInventoryArray.reduce((cakeA, cakeB) => cakeA + cakeB, 0);
+    const sumCakesInStock = (cakeA, cakeB) => (cakeA + cakeB);
+
+    let result = cakes.filter(listCakesInStock).map(listNumCakesInStock).reduce(sumCakesInStock, 0);
 
     return result;
 
   },
-
-
-
-
-
-
 
 
 
