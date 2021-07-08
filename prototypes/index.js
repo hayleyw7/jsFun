@@ -565,17 +565,23 @@ const bookPrompts = {
 
   removeViolence() {
 
-    const result = [];
+    const screenByViolence = book => {
+      ! (book.genre === 'Horror' || book.genre === 'True Crime');
+      return book;
+    };
 
-    books.forEach(book => {
-      if (!(book.genre === 'Horror' || book.genre === 'True Crime')) {
-        result.push(book.title);
-      }
-    });
+    const pullJustTitles = book => {
+      return book.title;
+    };
+
+    const result = books.filter(screenByViolence).map(pullJustTitles);
 
     return result;
 
   },
+
+
+
 
 
 
