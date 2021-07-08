@@ -23,10 +23,19 @@ const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 
 // DATASET: kitties from ./datasets/kitties
 const kittyPrompts = {
-  // orangeKittyNames() {
+
+
+
+
+
+
+
 
   //   // Return an array of just the names of kitties who are orange e.g.
   //   // ['Tiger', 'Snickers']
+
+
+  // orangeKittyNames() {
 
   // this is what i originally had
 
@@ -51,62 +60,68 @@ const kittyPrompts = {
     return orangeKitty;
   },
 
+
+
+
+
+
+
+
+
+
+
+  // Sort the kitties by their age
+
   sortByAge() {
-    // Sort the kitties by their age
 
     const result = kitties.sort((kittyA, kittyB) => kittyB.age - kittyA.age);
 
     return result;
 
-    // Annotation:
-    
-    // `1 : -1` means "if comparison = true, then element2 comes first in sorted list"
-
-    // `-1 : 1` means "if comparison = true, then element2 comes last in sorted list"
-
-    // if you switch the `=` in front of the opposite `1`, then it does what `kittiesByAge.reverse();` would do
   },
 
+
+
+
+
+
+
+
+
+  // Return an array of kitties who have all grown up by 2 years e.g.
+  // [{
+  //   name: 'Felicia',
+  //   age: 4,
+  //   color: 'grey'
+  // },
+  // {
+  //   name: 'Tiger',
+  //   age: 7,
+  //   color: 'orange'
+  // },
+  // ...etc]
+
   growUp() {
-    // Return an array of kitties who have all grown up by 2 years e.g.
-    // [{
-    //   name: 'Felicia',
-    //   age: 4,
-    //   color: 'grey'
-    // },
-    // {
-    //   name: 'Tiger',
-    //   age: 7,
-    //   color: 'orange'
-    // },
-    // ...etc]
 
-    // let kittiesOverTwo = kitties.forEach(kitty => {
-    //   kitty.age += 2;
-    // });
+    const result = [];
 
-    // console.log(kittiesOverTwo);
-
-    // kittiesOverTwo.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
-
-    // const result = kittiesOverTwo;
-    // return result;
-
-    const result = kitties.forEach(kitty => {
+    kitties.forEach(kitty => {
       kitty.age += 2;
+      result.push(kitty);
     });
 
-    result.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
+    result.sort((kittyA, kittyB) => (kittyB.age - kittyA.age));
 
     return result;
 
   }
 };
 
-// Annotation:
 
-// if kitties.age >= 2
-//// push onto new array
+
+
+
+
 
 
 
