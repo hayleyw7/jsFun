@@ -444,11 +444,8 @@ const classPrompts = {
 
   feClassrooms() {
 
-    const result = [];
-
-    classrooms.forEach(classroom => {
-      if (classroom.program === 'FE') 
-        result.push(classroom);
+    const result = classrooms.filter(classroom => {
+      return classroom.program === 'FE' ;
     });
     
     return result;
@@ -512,13 +509,7 @@ const classPrompts = {
 
   sortByCapacity() {
 
-    const result = classrooms.sort((classroomA, classroomB) => (classroomA.capacity > classroomB.capacity) ? 1 : -1);
-
-    result.sort((classroomA, classroomB) => {
-      if (classroomA.capacity === classroomB.capacity && classroomA.roomLetter < classroomB.roomLetter) {
-        return -1;
-      }
-    });
+    const result = classrooms.sort((classroomA, classroomB) => classroomA.capacity - classroomB.capacity);
 
     return result;
 
