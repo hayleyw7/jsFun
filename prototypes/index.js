@@ -101,25 +101,36 @@ const kittyPrompts = {
   // },
   // ...etc]
 
+  // growUp() {
+
+  //   const result = kitties.map((kitty => {
+  //     kitty.age += 2;
+  //     return kitty;
+  //   })).sort((kittyA, kittyB) => kittyB.age - kittyA.age);
+
+  //   return result;
+    
+  // }
+
   growUp() {
 
-    const result = [];
-
-    kitties.forEach(kitty => {
+    const time = (kitty) => {
       kitty.age += 2;
-      result.push(kitty);
-    });
+      return kitty;
+    };
 
-    result.sort((kittyA, kittyB) => (kittyB.age - kittyA.age));
+    const descending = (kittyA, kittyB) => kittyB.age - kittyA.age;
+
+    const result = kitties.map(time).sort(descending);
 
     return result;
-
+    
   }
+
+
+
+
 };
-
-
-
-
 
 
 
@@ -141,14 +152,24 @@ const kittyPrompts = {
 // DATASET: clubs from ./datasets/clubs
 
 const clubPrompts = {
+
+
+
+
+
+
+
+
+
+  // Create an object whose keys are the names of people, and whose values are
+  // arrays that include the names of the clubs that person is a part of. e.g.
+  // {
+  //   Louisa: ['Drama', 'Art'],
+  //   Pam: ['Drama', 'Art', 'Chess'],
+  //   ...etc
+  // }
+
   membersBelongingToClubs() {
-    // Create an object whose keys are the names of people, and whose values are
-    // arrays that include the names of the clubs that person is a part of. e.g.
-    // {
-    //   Louisa: ['Drama', 'Art'],
-    //   Pam: ['Drama', 'Art', 'Chess'],
-    //   ...etc
-    // }
 
     const result = clubs;
 
@@ -159,14 +180,10 @@ const clubPrompts = {
       allNames.concat();
     });
 
-    // allNames.toString();
-
     console.log(allNames);
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
@@ -188,15 +205,24 @@ const clubPrompts = {
 
 // DATASET: mods from ./datasets/mods
 const modPrompts = {
+
+
+
+
+
+
+
+
+  // Return an array of objects where the keys are mod (the number of the module)
+  // and studentsPerInstructor (how many students per instructor there are for that mod) e.g.
+  // [
+  //   { mod: 1, studentsPerInstructor: 9 },
+  //   { mod: 2, studentsPerInstructor: 11 },
+  //   { mod: 3, studentsPerInstructor: 10 },
+  //   { mod: 4, studentsPerInstructor: 8 }
+  // ]
+
   studentsPerMod() {
-    // Return an array of objects where the keys are mod (the number of the module)
-    // and studentsPerInstructor (how many students per instructor there are for that mod) e.g.
-    // [
-    //   { mod: 1, studentsPerInstructor: 9 },
-    //   { mod: 2, studentsPerInstructor: 11 },
-    //   { mod: 3, studentsPerInstructor: 10 },
-    //   { mod: 4, studentsPerInstructor: 8 }
-    // ]
 
     const result = mods;
     
@@ -209,8 +235,6 @@ const modPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
@@ -232,14 +256,20 @@ const modPrompts = {
 
 // DATASET: cakes from ./datasets/cakes
 const cakePrompts = {
+
+
+
+
+
+  // Return an array of objects that include just the flavor of the cake and how
+  // much of that cake is in stock e.g.
+  // [
+  //    { flavor: 'dark chocolate', inStock: 15 },
+  //    { flavor: 'yellow', inStock: 14 },
+  //    ..etc
+  // ]
+
   stockPerCake() {
-    // Return an array of objects that include just the flavor of the cake and how
-    // much of that cake is in stock e.g.
-    // [
-    //    { flavor: 'dark chocolate', inStock: 15 },
-    //    { flavor: 'yellow', inStock: 14 },
-    //    ..etc
-    // ]
 
     let result = cakes;
     
@@ -253,30 +283,37 @@ const cakePrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+  // Return an array of only the cakes that are in stock
+  // e.g.
+  // [
+  //   {
+  //   cakeFlavor: 'dark chocolate',
+  //   filling: null,
+  //   frosting: 'dark chocolate ganache',
+  //   toppings: ['dutch process cocoa', 'toasted sugar', 'smoked sea salt'],
+  //   inStock: 15
+  // },
+  // {
+  //   cakeFlavor: 'yellow',
+  //   filling: 'citrus glaze',
+  //   frosting: 'chantilly cream',
+  //   toppings: ['berries', 'edible flowers'],
+  //   inStock: 14
+  // },
+  // ..etc
+  // ]
+
   onlyInStock() {
-    // Return an array of only the cakes that are in stock
-    // e.g.
-    // [
-    //   {
-    //   cakeFlavor: 'dark chocolate',
-    //   filling: null,
-    //   frosting: 'dark chocolate ganache',
-    //   toppings: ['dutch process cocoa', 'toasted sugar', 'smoked sea salt'],
-    //   inStock: 15
-    // },
-    // {
-    //   cakeFlavor: 'yellow',
-    //   filling: 'citrus glaze',
-    //   frosting: 'chantilly cream',
-    //   toppings: ['berries', 'edible flowers'],
-    //   inStock: 14
-    // },
-    // ..etc
-    // ]
 
     let result = [];
 
@@ -287,13 +324,21 @@ const cakePrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+
+  // Return the total amount of cakes in stock e.g.
+  // 59
+
   totalInventory() {
-    // Return the total amount of cakes in stock e.g.
-    // 59
 
     let cakeObjectsInStock = this.onlyInStock();
 
@@ -307,14 +352,23 @@ const cakePrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+
+
+  // Return an array of all unique toppings (no duplicates) needed to bake
+  // every cake in the dataset e.g.
+  // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
+
   allToppings() {
-    // Return an array of all unique toppings (no duplicates) needed to bake
-    // every cake in the dataset e.g.
-    // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
     let result = [];
 
@@ -324,57 +378,31 @@ const cakePrompts = {
 
     return result;
 
-    // console.log(Object.values(cakes[0].toppings));
-
-
-    // BAD DRAFTS BELOW, SKIPPING FOR NOW:
-
-    // let allToppingsArray = [];
-
-    // cakes.forEach(element => {
-    //   allToppingsArray.push(element.toppings);
-    // });
-
-    // let allToppingsArrayJoined = allToppingsArray.join();
-
-    // console.log(allToppingsArrayJoined);
-
-    // const result = allToppingsArrayJoined;
-    // return result;
-
-    // Annotation:
-
-    // WRONG DRAFTING CODE:
-
-    // let uniqueToppings = [];
-
-    // allToppingsArray.forEach(element => {
-    //   if (!allToppingsArray.includes(element)) {
-    //     uniqueToppings.push(element);
-    //   }
-    // });
-
-    // let uniqueToppings = allToppingsArray.element.filter((c, index) => {
-    //   return allToppingsArray.element.indexOf(c) === index;
-    // });
   },
 
+
+
+
+
+
+
+
+
+  // I need to make a grocery list. Please give me an object where the keys are
+  // each topping, and the values are the amount of that topping I need to buy e.g.
+  // {
+  //    'dutch process cocoa': 1,
+  //    'toasted sugar': 3,
+  //    'smoked sea salt': 3,
+  //    'berries': 2,
+  //    ...etc
+  // }
+
   groceryList() {
-    // I need to make a grocery list. Please give me an object where the keys are
-    // each topping, and the values are the amount of that topping I need to buy e.g.
-    // {
-    //    'dutch process cocoa': 1,
-    //    'toasted sugar': 3,
-    //    'smoked sea salt': 3,
-    //    'berries': 2,
-    //    ...etc
-    // }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
@@ -396,14 +424,22 @@ const cakePrompts = {
 
 // DATASET: classrooms from ./datasets/classrooms
 const classPrompts = {
-  feClassrooms() {
-    // Create an array of just the front-end classrooms. e.g.
-    // [
-    //   { roomLetter: 'A', program: 'FE', capacity: 32 },
-    //   { roomLetter: 'C', program: 'FE', capacity: 27 },
-    //   { roomLetter: 'E', program: 'FE', capacity: 22 },
-    //   { roomLetter: 'G', program: 'FE', capacity: 29 }
-    // ]
+
+
+
+
+
+
+
+  // Create an array of just the front-end classrooms. e.g.
+  // [
+  //   { roomLetter: 'A', program: 'FE', capacity: 32 },
+  //   { roomLetter: 'C', program: 'FE', capacity: 27 },
+  //   { roomLetter: 'E', program: 'FE', capacity: 22 },
+  //   { roomLetter: 'G', program: 'FE', capacity: 29 }
+  // ]
+
+    feClassrooms() {
 
     const result = [];
 
@@ -414,17 +450,24 @@ const classPrompts = {
     
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+  // Create an object where the keys are 'feCapacity' and 'beCapacity',
+  // and the values are the total capacity for all classrooms in each program e.g.
+  // {
+  //   feCapacity: 110,
+  //   beCapacity: 96
+  // }
+
   totalCapacities() {
-    // Create an object where the keys are 'feCapacity' and 'beCapacity',
-    // and the values are the total capacity for all classrooms in each program e.g.
-    // {
-    //   feCapacity: 110,
-    //   beCapacity: 96
-    // }
 
     let totalFECapacitiesArray = [];
     let totalBECapacitiesArray = [];
@@ -448,12 +491,23 @@ const classPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+
+
+
+
+  // Return the array of classrooms sorted by their capacity (least capacity to greatest)
+
   sortByCapacity() {
-    // Return the array of classrooms sorted by their capacity (least capacity to greatest)
 
     const result = classrooms.sort((classroomA, classroomB) => (classroomA.capacity > classroomB.capacity) ? 1 : -1);
 
@@ -465,28 +519,57 @@ const classPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
+
+
+
+
+
+
+
+
+
+
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 // DATASET: books from './datasets/books
 
 const bookPrompts = {
-  removeViolence() {
-    // return an array of all book titles that are not horror or true crime. Eg:
 
-    //  ['1984', 'The Great Gatsby', 'Lord of the Flies', 'Harry Potter and the Sorcerer\'s Stone',
-    //   'The Hitchhiker\'s Guide to the Galaxy', 'Flowers for Algernon', 'Slaughterhouse-Five',
-    //   'The Handmaid\'s Tale', 'The Metamorphosis', 'Brave New World', 'Life of Pi',
-    //   'The Curious Incident of the Dog in the Night - Time', 'The Bell Jar',
-    //   'Catch-22', 'Treasure Island']
+
+
+
+
+
+
+
+
+
+  // return an array of all book titles that are not horror or true crime. Eg:
+
+  //  ['1984', 'The Great Gatsby', 'Lord of the Flies', 'Harry Potter and the Sorcerer\'s Stone',
+  //   'The Hitchhiker\'s Guide to the Galaxy', 'Flowers for Algernon', 'Slaughterhouse-Five',
+  //   'The Handmaid\'s Tale', 'The Metamorphosis', 'Brave New World', 'Life of Pi',
+  //   'The Curious Incident of the Dog in the Night - Time', 'The Bell Jar',
+  //   'Catch-22', 'Treasure Island']
+
+  removeViolence() {
 
     const result = [];
 
@@ -498,17 +581,24 @@ const bookPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
-
   },
-  getNewBooks() {
-    // return an array of objects containing all books that were
-    // published in the 90's and 00's. Inlucde the title and the year Eg:
 
-    // [{ title: 'Harry Potter and the Sorcerer\'s Stone', year: 1997 },
-    //  { title: 'Life of Pi', year: 2001 },
-    //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
+
+
+
+
+
+
+
+
+  // return an array of objects containing all books that were
+  // published in the 90's and 00's. Inlucde the title and the year Eg:
+
+  // [{ title: 'Harry Potter and the Sorcerer\'s Stone', year: 1997 },
+  //  { title: 'Life of Pi', year: 2001 },
+  //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
+
+  getNewBooks() {
 
     let result = [];
 
@@ -524,11 +614,16 @@ const bookPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
-
 };
+
+
+
+
+
+
+
+
 
 
 // ---------------------------------------------------------------------------
@@ -548,9 +643,15 @@ const bookPrompts = {
 // DATASET: weather from './datasets/weather
 
 const weatherPrompts = {
+
+
+
+
+
+  // return an array of all the average temperatures. Eg:
+  // [ 40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5 ]
+
   getAverageTemps() {
-    // return an array of all the average temperatures. Eg:
-    // [ 40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5 ]
 
     const result = [];
 
@@ -561,16 +662,22 @@ const weatherPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+  // Return an array of sentences of the locations that are sunny
+  // and mostly sunny. Include the location and weather type. Eg:
+  // [ 'Atlanta, Georgia is sunny.',
+  // 'New Orleans, Louisiana is sunny.',
+  // 'Raleigh, North Carolina is mostly sunny.' ]
+
   findSunnySpots() {
-    // Return an array of sentences of the locations that are sunny
-    // and mostly sunny. Include the location and weather type. Eg:
-    // [ 'Atlanta, Georgia is sunny.',
-    // 'New Orleans, Louisiana is sunny.',
-    // 'Raleigh, North Carolina is mostly sunny.' ]
 
     const result = [];
 
@@ -582,26 +689,35 @@ const weatherPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+
+
+  // Return the location with the highest humidity. Eg:
+  // {
+  //   location: 'Portland, Oregon',
+  //   type: 'cloudy',
+  //   humidity: 84,
+  //   temperature: { high: 49, low: 38 }
+  // }
+
+  // const result = [];
+
+  // weather.forEach(cityA, cityB => {
+  //   if (cityA > cityB) {
+  //     result.push(cityA);
+  //   }
+  // });
+
   findHighestHumidity() {
-    // Return the location with the highest humidity. Eg:
-    // {
-    //   location: 'Portland, Oregon',
-    //   type: 'cloudy',
-    //   humidity: 84,
-    //   temperature: { high: 49, low: 38 }
-    // }
-
-    // const result = [];
-
-    // weather.forEach(cityA, cityB => {
-    //   if (cityA > cityB) {
-    //     result.push(cityA);
-    //   }
-    // });
 
     const citiesByHumidity = weather.sort((cityA, cityB) => (cityA.humidity > cityB.humidity) ? -1 : 1);
 
@@ -641,13 +757,23 @@ const weatherPrompts = {
 // DATASET: nationalParks from ./datasets/nationalParks
 
 const nationalParksPrompts = {
+
+
+
+
+
+
+
+
+
+  /// Return an object containing the names of which parks I need to visit
+  // and the ones I have already visited eg:
+  // {
+  //   parksToVisit: ["Yellowstone", "Glacier", "Everglades"],
+  //   parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
+  //}
+
   getParkVisitList() {
-    /// Return an object containing the names of which parks I need to visit
-    // and the ones I have already visited eg:
-    // {
-    //   parksToVisit: ["Yellowstone", "Glacier", "Everglades"],
-    //   parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
-    //}
 
     const result = nationalParks.reduce((accumulatorObj, currentNationalPark) => {
       if (currentNationalPark.visited) {
@@ -666,19 +792,23 @@ const nationalParksPrompts = {
       return accumulatorObj;
     }, {});
     return result;
-
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+  // Return an array of objects where the key is the state and the value is its National Park
+  // eg: [ { Colorado: 'Rocky Mountain' },
+  // { Wyoming: 'Yellowstone' },
+  // { Montana: 'Glacier' },
+  // { Maine: 'Acadia' },
+  // { Utah: 'Zion' },
+  // { Florida: 'Everglades' } ]
+
   getParkInEachState() {
-    // Return an array of objects where the key is the state and the value is its National Park
-    // eg: [ { Colorado: 'Rocky Mountain' },
-    // { Wyoming: 'Yellowstone' },
-    // { Montana: 'Glacier' },
-    // { Maine: 'Acadia' },
-    // { Utah: 'Zion' },
-    // { Florida: 'Everglades' } ]
 
     let result = [];
 
@@ -695,41 +825,50 @@ const nationalParksPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+
+
+  // Return an array of all the activities I can do
+  // in a National Park. Make sure to exclude duplicates. eg:
+  // [ 'hiking',
+  //   'shoeshoing',
+  //   'camping',
+  //   'fishing',
+  //   'boating',
+  //   'watching wildlife',
+  //   'cross-country skiing',
+  //   'swimming',
+  //   'bird watching',
+  //   'canyoneering',
+  //   'backpacking',
+  //   'rock climbing' ]
+
   getParkActivities() {
-    // Return an array of all the activities I can do
-    // in a National Park. Make sure to exclude duplicates. eg:
-    // [ 'hiking',
-    //   'shoeshoing',
-    //   'camping',
-    //   'fishing',
-    //   'boating',
-    //   'watching wildlife',
-    //   'cross-country skiing',
-    //   'swimming',
-    //   'bird watching',
-    //   'canyoneering',
-    //   'backpacking',
-    //   'rock climbing' ]
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
 
 
+
+
+
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
+
 
 
 
@@ -738,45 +877,63 @@ const nationalParksPrompts = {
 
 // DATASET: breweries from ./datasets/breweries
 const breweryPrompts = {
-  getBeerCount() {
-    // Return the total beer count of all beers for every brewery e.g.
-    // 40
 
-    
+
+
+
+
+
+
+
+  // Return the total beer count of all beers for every brewery e.g.
+  // 40
+
+  getBeerCount() {
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
+
+
+
+
+
+
+
+
+
+
+  // Return an array of objects where each object has the name of a brewery
+  // and the count of the beers that brewery has e.g.
+  // [
+  //  { name: 'Little Machine Brew', beerCount: 12 },
+  //  { name: 'Ratio Beerworks', beerCount: 5},
+  // ...etc.
+  // ]
 
   getBreweryBeerCount() {
-    // Return an array of objects where each object has the name of a brewery
-    // and the count of the beers that brewery has e.g.
-    // [
-    //  { name: 'Little Machine Brew', beerCount: 12 },
-    //  { name: 'Ratio Beerworks', beerCount: 5},
-    // ...etc.
-    // ]
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   },
 
+
+
+
+
+
+
+  // Return the beer which has the highest ABV of all beers
+  // e.g.
+  // { name: 'Barrel Aged Nature\'s Sweater', type: 'Barley Wine', abv: 10.9, ibu: 40 }
+
   findHighestAbvBeer() {
-    // Return the beer which has the highest ABV of all beers
-    // e.g.
-    // { name: 'Barrel Aged Nature\'s Sweater', type: 'Barley Wine', abv: 10.9, ibu: 40 }
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
   }
 };
 
