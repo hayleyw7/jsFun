@@ -657,10 +657,20 @@ const nationalParksPrompts = {
     // { Utah: 'Zion' },
     // { Florida: 'Everglades' } ]
 
+    let result = [];
 
-    // const result = 'test';
-    // const toJoin = Object.values(nationalParks[0].location);
-    // return result;
+    nationalParks.forEach(park => {
+      newState = park.location;
+      // newPark = park.name;
+      // delete park.visited;
+      // delete park.activities;
+      // delete park.name;
+      // delete park.location;
+      result.push(park.location);
+      result.push(park.name);
+    });
+
+    return result;
 
     // Annotation:
     // Write your annotation here as a comment
@@ -708,6 +718,8 @@ const breweryPrompts = {
   getBeerCount() {
     // Return the total beer count of all beers for every brewery e.g.
     // 40
+
+    
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
