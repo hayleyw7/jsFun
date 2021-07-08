@@ -47,13 +47,14 @@ const kittyPrompts = {
     }).map((kitty) => {
       return kitty.name;
     });
+
     return orangeKitty;
   },
 
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = kitties.sort((kittyA, kittyB) => (kittyA.age < kittyB.age) ? 1 : -1);
+    const result = kitties.sort((kittyA, kittyB) => kittyB.age - kittyA.age);
 
     return result;
 
