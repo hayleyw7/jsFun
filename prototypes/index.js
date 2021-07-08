@@ -598,26 +598,42 @@ const bookPrompts = {
   //  { title: 'Life of Pi', year: 2001 },
   //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
+  //   getNewBooks() {
+
+  //     let result = [];
+
+  //     books.forEach(book => {
+  //       if (book.published >= 1990) {
+  //         book.year = book.published;
+  //         delete book.published;
+  //         delete book.author;
+  //         delete book.genre;
+  //         result.push(book);
+  //       }
+  //     });
+
+  //     return result;
+
+  //   }
+  // };
+
+
   getNewBooks() {
 
-    let result = [];
+    const accessPublishedDatesOver90 = book => {
+      return book.published >= 1990;
+    };
 
-    books.forEach(book => {
-      if (book.published >= 1990) {
-        book.year = book.published;
-        delete book.published;
-        delete book.author;
-        delete book.genre;
-        result.push(book);
-      }
-    });
+    const provideYearPublished = book => {
+      book.year = book.published;
+      return book.year && book.title;
+    };
+
+    let result = books.filter(accessPublishedDatesOver90).map(provideYearPublished);
 
     return result;
-
   }
 };
-
-
 
 
 
