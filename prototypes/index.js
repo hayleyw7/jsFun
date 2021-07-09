@@ -346,17 +346,17 @@ const cakePrompts = {
 
   totalInventory() {
 
-    const listCakesInStock = cake => {
+    const isInStock = cake => {
       return cake.inStock > 0;
     };
 
-    const listNumCakesInStock = cake => {
+    const getStock = cake => {
       return cake.inStock;
     };
 
     const sumCakesInStock = (cakeA, cakeB) => (cakeA + cakeB);
 
-    let result = cakes.filter(listCakesInStock).map(listNumCakesInStock).reduce(sumCakesInStock, 0);
+    let result = cakes.filter(isInStock).map(getStock).reduce(sumCakesInStock, 0);
 
     return result;
 
@@ -598,6 +598,10 @@ const bookPrompts = {
   //  { title: 'Life of Pi', year: 2001 },
   //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
+
+
+  // this works fine
+
   //   getNewBooks() {
 
   //     let result = [];
@@ -617,6 +621,7 @@ const bookPrompts = {
   //   }
   // };
 
+  // but here's drafting it how they want it
 
   getNewBooks() {
 
