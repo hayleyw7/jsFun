@@ -130,7 +130,9 @@ const kittyPrompts = {
 
 
 
-// SKIPPING & COMING BACK TO THIS ONE
+
+
+
 
 // DATASET: clubs from ./datasets/clubs
 
@@ -143,7 +145,7 @@ const clubPrompts = {
 
 
 
-
+  //DIRECTIONS:
   // Create an object whose keys are the names of people, and whose values are
   // arrays that include the names of the clubs that person is a part of. e.g.
   // {
@@ -154,25 +156,19 @@ const clubPrompts = {
 
   membersBelongingToClubs() {
 
-    const result = clubs;
-
-    let allNames = [];
-
-    result.forEach(club => {
-      allNames.push(club.members);
-      allNames.concat();
-    });
-
-    console.log(allNames);
+    const result = clubs.reduce((obj, club) => {
+      club.members.forEach(member => {
+        if (!obj[member]) {
+          obj[member] = [];
+        }
+        obj[member].push(club.club);
+      })
+      return obj;
+    }, {})
 
     return result;
-
   }
 };
-
-
-
-
 
 
 // ---------------------------------------------------------------------------

@@ -1,3 +1,25 @@
+# Completed
+
+## Single Datasets
+
+- [x] kitties
+- [x] clubs 
+- [x] mods
+- [ ] cakes
+- [x] classrooms
+- [x] books
+- [x] weather
+- [ ] nationalParks
+- [ ] breweries
+
+## Double Datasets
+
+- [ ] turing
+- [ ] bosses
+- [ ] astronomy
+- [ ] ultima
+- [ ] dinosaurs
+
 # Understanding Prototype Methods
 
 Understanding how to use prototype methods is an important step in learning how to work with application data. As you build more complex applications, you'll find yourself working with very large datasets. These datasets might need to be massaged into new formats or connect to other sources of data. Prototype methods will give you the tools to accomplish these tasks.
@@ -91,25 +113,3 @@ Check out [this video](https://vimeo.com/turing/review/388555223/d701e8fdd8) for
 * [MDN - Array Prototype Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype#Methods)
 * [MDN - Object Prototype Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods_of_the_Object_constructor)
 * [Turing Prototype Methods Lesson Plan](http://frontend.turing.io/lessons/module-2/arrays-objects/index.html)
-
-# Completed
-
-## Single Datasets
-
-- [x] kitties
-- [ ] clubs 
-- [x] mods
-- [ ] cakes
-- [x] classrooms
-- [x] books
-- [x] weather
-- [ ] nationalParks
-- [ ] breweries
-
-## Double Datasets
-
-- [ ] turing
-- [ ] bosses
-- [ ] astronomy
-- [ ] ultima
-- [ ] dinosaurs
