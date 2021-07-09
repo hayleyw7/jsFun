@@ -725,37 +725,31 @@ const weatherPrompts = {
   //   temperature: { high: 49, low: 38 }
   // }
 
-  // const result = [];
+  // working code below
 
-  // weather.forEach(cityA, cityB => {
-  //   if (cityA > cityB) {
-  //     result.push(cityA);
+  //   findHighestHumidity() {
+
+  //     const citiesByHumidity = weather.sort((cityA, cityB) => (cityB.humidity - cityA.humidity);
+
+  //     const result = citiesByHumidity[0];
+
+  //     return result;
+
   //   }
-  // });
+  // };
+
+  // draft refactor
 
   findHighestHumidity() {
 
-    const citiesByHumidity = weather.sort((cityA, cityB) => (cityA.humidity > cityB.humidity) ? -1 : 1);
-
-    const result = citiesByHumidity[0];
+    const result = weather.sort((cityA, cityB) => cityB.humidity - cityA.humidity).map(city => {
+      return city[0];
+    });
 
     return result;
 
   }
 };
-
-// draft refactor
-
-//   findHighestHumidity() {
-
-//     const result = weather.sort((cityA, cityB) => cityB.humidity - cityA.humidity).map(city => {
-//       return city[0];
-//     });
-
-//     return result;
-
-//   }
-// };
 
 
 
