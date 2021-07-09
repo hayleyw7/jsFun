@@ -370,22 +370,42 @@ const cakePrompts = {
   // every cake in the dataset e.g.
   // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-  allToppings() {
+  // allToppings() {
 
-    let result = [];
-
-    cakes.forEach(cake => {
-      result.push(cake.toppings);
-    });
-
-    return result;
-
-  },
+  //   let result = cakes.map(cake => {
+  //     return cake.toppings;
+  //   });
+  //   return result;
+  // },
 
 
 
+  // allToppings() {
+
+  //   const sumToppings = (accumulator, cake) => { 
+  //     return accumulator + cake.toppings;
+  //   };
+
+  //   console.log(sumToppings);
+
+  //   const result = cakes.reduce(sumToppings);
+
+  //   return result;
+  // },
 
 
+
+
+  // allToppings() {
+
+  //   const sumToppings = (cake =>
+  //     result.cake.toppings;
+  //   };
+
+  //   const result = cakes.reduce(sumToppings);
+
+  //   return result;
+  // },
 
 
 
