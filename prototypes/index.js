@@ -674,15 +674,10 @@ const weatherPrompts = {
 
   getAverageTemps() {
 
-    const result = [];
-
-    weather.forEach(city => {
-      let avgTemp = ((city.temperature.high + city.temperature.low) / 2);
-      result.push(avgTemp);
+    const result = weather.map(city => {
+      return ((city.temperature.high + city.temperature.low) / 2);
     });
-
     return result;
-
   },
 
 
@@ -746,13 +741,21 @@ const weatherPrompts = {
 
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
-
   }
 };
 
+// draft refactor
 
+//   findHighestHumidity() {
+
+//     const result = weather.sort((cityA, cityB) => cityB.humidity - cityA.humidity).map(city => {
+//       return city[0];
+//     });
+
+//     return result;
+
+//   }
+// };
 
 
 
