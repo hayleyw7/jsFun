@@ -7,8 +7,8 @@
 - [x] mods
 - [ ] cakes
 - [x] classrooms
-- [x] books
-- [x] weather
+- [ ] books
+- [ ] weather
 - [ ] nationalParks
 - [ ] breweries
 
