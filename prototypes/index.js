@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const { kitties } = require('./datasets/kitties');
 const { clubs } = require('./datasets/clubs');
 const { mods } = require('./datasets/mods');
@@ -31,31 +33,45 @@ const kittyPrompts = {
 
 
 
+  // DIRECTIONS:
+  // Return an array of just the names of kitties who are orange e.g.
+  // ['Tiger', 'Snickers']
 
-  //   // Return an array of just the names of kitties who are orange e.g.
-  //   // ['Tiger', 'Snickers']
+  // PSUEDOCODE:
+  // input = array of objects, with keys: name, age, color
+  // output = array of names of orange kitties
+  // filter over kitties array & find orange kitties
+  //  `color === 'orange'`
+  // then `return` names of orange kitties
 
   orangeKittyNames() {
-    const orangeKitty = kitties.filter((kitty) => {
+  
+    const getOrangeKitties = (kitty) => {
       return kitty.color === 'orange';
-    }).map((kitty) => {
-      return kitty.name;
-    });
+    };
 
-    return orangeKitty;
+    const getKittyNames = (kitty) => {
+      return kitty.name;
+    };
+
+    const result = kitties.filter(getOrangeKitties).map(getKittyNames);
+
+    return result;
   },
 
 
 
 
 
-
+  // DIRECTIONS:
   // Sort the kitties by their age
 
   sortByAge() {
 
-    const result = kitties.sort((kittyA, kittyB) => kittyB.age - kittyA.age);
+    const sortByAgeFormula = (kittyA, kittyB) =>
+      kittyB.age - kittyA.age;
 
+    const result = kitties.sort(sortByAgeFormula);
     return result;
   },
 
@@ -66,7 +82,7 @@ const kittyPrompts = {
 
 
 
-
+  // DIRECTIONS:
   // Return an array of kitties who have all grown up by 2 years e.g.
   // [{
   //   name: 'Felicia',
@@ -80,27 +96,16 @@ const kittyPrompts = {
   // },
   // ...etc]
 
-  // growUp() {
-
-  //   const result = kitties.map((kitty => {
-  //     kitty.age += 2;
-  //     return kitty;
-  //   })).sort((kittyA, kittyB) => kittyB.age - kittyA.age);
-
-  //   return result;
-    
-  // }
-
   growUp() {
 
-    const time = (kitty) => {
+    const passTime = (kitty) => {
       kitty.age += 2;
       return kitty;
     };
 
     const descending = (kittyA, kittyB) => kittyB.age - kittyA.age;
 
-    const result = kitties.map(time).sort(descending);
+    const result = kitties.map(passTime);
 
     return result;
   }
