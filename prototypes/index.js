@@ -251,7 +251,6 @@ const cakePrompts = {
   // ]
 
   stockPerCake() {
-
     let result = cakes;
     
     result.forEach(cake => {
@@ -263,10 +262,21 @@ const cakePrompts = {
     });
 
     return result;
-
   },
 
+//   stockPerCake() {
+    
+//     const result = cakes.map(cake => {
+//       let cakeList = {};
+//       cake.flavor = cake.cakeFlavor;
+//       cakeList.inStock = cake.inStock;
+//       return cakeList;
+//     });
 
+
+// console.log(result)
+//     return result;
+//   },
 
 
 
@@ -907,9 +917,20 @@ const breweryPrompts = {
 
   getBeerCount() {
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
 
+
+  // output = num, totalBeerCount
+  // beersPerBrewery = brewery.beers.length
+  // numofBreweries = how many objects in breweries array
+    // breweries.length
+
+  const result = breweries.map((brewery) => {
+   return brewery.beers.length;
+  }).reduce((acc, value) => {
+    return acc + value;
+  }, 0)
+
+  return result;
   },
 
 
