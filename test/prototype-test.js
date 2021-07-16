@@ -163,7 +163,7 @@ describe("PROTOTYPES", () => {
 
 
   
-  describe.skip("Cake Prompts", () => {
+  describe("Cake Prompts", () => {
     it("stockPerCake", () => {
       const e = cakePrompts.stockPerCake();
 
@@ -188,7 +188,7 @@ describe("PROTOTYPES", () => {
       }])
     });
     
-    it("onlyInStock", () => {
+    it.skip("onlyInStock", () => {
       const e = cakePrompts.onlyInStock();
 
       expect(e).to.deep.equal([{
@@ -218,19 +218,19 @@ describe("PROTOTYPES", () => {
       }])
     });
     
-    it("totalInventory", () => {
+    it.skip("totalInventory", () => {
       const e = cakePrompts.totalInventory();
 
       expect(e).to.deep.equal(59)
     });
     
-    it("allToppings", () => {
+    it.skip("allToppings", () => {
       const e = cakePrompts.allToppings();
 
       expect(e).to.deep.equal(["dutch process cocoa", "toasted sugar", "smoked sea salt", "berries", "edible flowers", "mint", "cranberry", "crystallized ginger"])
     });
     
-    it("groceryList", () => {
+    it.skip("groceryList", () => {
       const e = cakePrompts.groceryList();
 
       expect(e).to.deep.equal({
@@ -537,7 +537,7 @@ describe("PROTOTYPES", () => {
       expect(e).to.deep.equal(40)
     });
     
-    it("getBreweryBeerCount", () => {
+    it.skip("getBreweryBeerCount", () => {
       const e = breweryPrompts.getBreweryBeerCount();
 
       expect(e).to.deep.equal([{
@@ -558,7 +558,7 @@ describe("PROTOTYPES", () => {
       }])
     });
     
-    it("findHighestAbvBeer", () => {
+    it.skip("findHighestAbvBeer", () => {
       const e = breweryPrompts.findHighestAbvBeer();
 
       expect(e).to.deep.equal({
