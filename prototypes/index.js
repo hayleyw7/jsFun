@@ -835,21 +835,57 @@ const nationalParksPrompts = {
   // { Florida: 'Everglades' } ]
 
   getParkInEachState() {
+  
+  // INPUT: array of objects
+  // OUTPUT: array of objects
+    // [ {park.location: park.name}, {etc}]
 
-    let result = [];
+  // prototype ideas - forEach, map, reduce
 
-    nationalParks.forEach(park => {
-      newState = park.location;
-      // newPark = park.name;
-      // delete park.visited;
-      // delete park.activities;
-      // delete park.name;
-      // delete park.location;
-      result.push(park.location);
-      result.push(park.name);
-    });
+    const result = nationalParks.reduce((acc, park) => {
+      park.location.forEach(location => {
 
-    return result;
+      if (!acc[location]) {
+        acc[location] = [];
+      }
+        acc[location].push(park.name);
+      })
+      return acc;
+    }, {})
+
+    // return result;
+
+
+
+    // const result = clubs.reduce((obj, club) => {
+    //   club.members.forEach(member => {
+    //     if (!obj[member]) {
+    //       obj[member] = [];
+    //     }
+    //     obj[member].push(club.club);
+    //   })
+    //   return obj;
+    // }, {})
+
+
+
+
+
+
+    // let result = [];
+
+    // nationalParks.forEach(park => {
+    //   newState = park.location;
+    //   // newPark = park.name;
+    //   // delete park.visited;
+    //   // delete park.activities;
+    //   // delete park.name;
+    //   // delete park.location;
+    //   result.push(park.location);
+    //   result.push(park.name);
+    // });
+
+    // return result;
 
   },
 
@@ -1146,8 +1182,7 @@ const bossPrompts = {
 
 
 
-  // Create an array of objects that each have the name of the boss and the sum
-  // loyalty of all their sidekicks. e.g.:
+  // Create an array of objects that each have the name of the boss and the sum loyalty of all their sidekicks. e.g.:
   // [
   //   { bossName: 'Jafar', sidekickLoyalty: 3 },
   //   { bossName: 'Ursula', sidekickLoyalty: 20 },
@@ -1156,11 +1191,48 @@ const bossPrompts = {
 
   bossLoyalty() {
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
-    return result;
+    const bossesKeys = Object.keys(bosses)
 
+    const bossNamesObjects = bossesKeys.map((boss) => {
+      return {
+        bossName: bosses[boss].name,
+        sidekickLoyalty: 0
+      } 
+    })
+
+    bossNamesObjects.map((elem) => {
+      sidekicks.forEach((sidekick) => {
+        if (sidekick.boss === elem.bossName) {
+          elem.sidekickLoyalty += sidekick.loyaltyToBoss
+        }
+      })
+      return elem
+    })
+
+    return bossNamesObjects
   }
-};
+}
+
+
+
+
+//   bossLoyalty() {
+//     const bossKeys = Object.keys(bosses)
+
+//     const result = bossKeys.reduce((acc, boss) => {
+
+//       sidekicks.forEach((sidekick) => {
+//         if (sidekick.boss === boss.bossName) {
+//           acc[bossName] = boss.bossName;
+//           acc[sidekickLoyalty] = sidekick.loyaltyToBoss;
+//           }
+//       console.log(acc)
+//       }, {})
+//       return acc;
+//     })
+//     return result
+//   }
+// };
 
 
 
